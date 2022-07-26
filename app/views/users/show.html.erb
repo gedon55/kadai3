@@ -5,8 +5,6 @@
   <%= image_tag @user.get_profile_image(100,100) %>
 </div>
 
-<!-- ユーザーの投稿一覧 -->
-
 <% @books.each do |book| %>
 <div>
   <%= link_to book_path(book.id) do %>
