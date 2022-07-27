@@ -18,28 +18,36 @@
       <a class="navbar-brand" href="/">
         <span>Bookers</span>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-       <div class="navbar-collapse collapse show" id="navbarNavDropdown" style="">
+       <div class="navbar-collapse collapse" id="navbarNavDropdown" style="">
         <ul class="navbar-nav ml-auto">
           
          <% if user_signed_in? %>
-    <li>
-      <%= link_to '投稿フォーム', new_post_image_path %>
-      <i class="fas fa-Users"></i>
+    <li class="nav-link text-light">
+      <i class="fas fa-home"></i><%= link_to 'Home', new_book_path %>
     </li>
-    <li>
-      <%= link_to 'マイページ', user_path(current_user.id) %>    </li>
-    <li>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <li class="nav-link text-light">
+      <i class="fas fa-users"></i><%= link_to "User", users_path %>
+    </li>
+    <li class="nav-link text-light">
+      <i class="fas fa-book-open"></i><%= link_to 'Books', user_path(current_user.id) %>    </li>
+    <li class="nav-link text-light">
+      <i class="fas fa-sign-out-alt"></i><%= link_to "Log out", destroy_user_session_path, method: :delete %>
     </li>
   <% else %>
-    <li>
-      <i class="fas fa-users"></i><%= link_to "新規登録" , new_user_registration_path %>
+    <li class="nav-link text-light">
+      <a href="/"><i class="fas fa-home"></i>Home </a>
     </li>
-    <li>
-      <%= link_to "ログイン", new_user_session_path %>
+    <li class="nav-link text-light">
+      <a href="homes/about"><i class="fas fa-link"></i>About</a>
+    </li>
+    <li class="nav-link text-light">
+      <i class="fas fa-users"></i><%= link_to "Sign up" , new_user_registration_path, class:"btn btn-white" %>
+    </li>
+    <li class="nav-link text-light">
+      <i class="fas fa-sign-in-alt"></i></i><%= link_to "Log in", new_user_session_path %>
     </li>
   <% end %>
         </ul>

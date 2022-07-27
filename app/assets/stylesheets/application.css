@@ -13,4 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
  
+ .nav-link{
+   color:f8f9fa;
+   display:block;
+   padding:0.5rem 1rem;
+ }
