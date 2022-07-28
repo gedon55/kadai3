@@ -12,12 +12,12 @@
       </tr>
       <tr>
 	    <td>introduction</td>
-	    <td><!--@user.introduction--></td>
+	      <!--@user.introduction-->
       </tr>
       </table>
       
       <div class="row">
-      <%= link_to user_path(current_user.id), class:"btn btn-outline-secondary btn-block",method: :get do %>
+      <%= link_to edit_user_path(@user.id), class:"btn btn-outline-secondary btn-block",method: :get do %>
       <i class="fas fa-user-cog"></i>
       <% end %>
       </div>
@@ -67,20 +67,3 @@
   </div>
 </div>
 
-
-
-
-
-
-
-<% @books.each do |book| %>
-<div>
-  <!--詳細画面-->
-  <%= link_to book_path(book.id) do %>
-  <p>詳細画面</p>
-  <% end %>
-  <p>ショップ名：<%= book.title %></p>
-  <p>説明：<%= book.body %></p>
-  <p>ユーザーネーム：<%= book.user.name %></p>
-</div>
-<% end %>
