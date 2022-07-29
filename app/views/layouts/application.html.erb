@@ -24,52 +24,55 @@
        <div class="navbar-collapse collapse" id="navbarNavDropdown" style="">
         <ul class="navbar-nav ml-auto">
 
-         <% if user_signed_in? %>
+  <% if user_signed_in? %>
 
       <%= link_to user_path(current_user.id),class:"nav-link text-light", method: :get do %>
-      <i class="fas fa-home"></i>  Home
+      <i class="fas fa-home"></i>Home
       <% end %>
 
 
       <%= link_to users_path, class:"nav-link text-light", method: :get do %>
-      <i class="fas fa-users"></i>  User
+      <i class="fas fa-users"></i>Users
       <% end %>
 
       <%= link_to books_path, class:"nav-link text-light", method: :get do %>
-      <i class="fas fa-book-open"></i>  Books
+      <i class="fas fa-book-open"></i>Books
       <% end %>
 
       <%= link_to destroy_user_session_path, class:"nav-link text-light", method: :delete do %>
-      <i class="fas fa-sign-out-alt"></i>  Log out
+      <i class="fas fa-sign-out-alt"></i>Log out
       <% end %>
 
   <% else %>
 
-      <%= link_to '/', class:"nav-link text-light", method: :get do %>
-      <i class="fas fa-home"></i>  Home
+      <%= link_to root_path, class:"nav-link text-light", method: :get do %>
+      <i class="fas fa-home"></i>Home
       <% end %>
 
       <%= link_to about_path, class:"nav-link text-light", method: :get do %>
-      <i class="fas fa-link"></i>  About
+      <i class="fas fa-link"></i>About
       <% end %>
 
       <%= link_to new_user_registration_path, class:"nav-link text-light", method: :get do %>
-      <i class="fas fa-users"></i>  Sign up
+      <i class="fas fa-user-plus"></i>Sign up
       <% end %>
-      
+
       <%= link_to new_user_session_path, class:"nav-link text-light", method: :get do %>
-      <i class="fas fa-sign-in-alt"></i></i>  Log in
+      <i class="fas fa-sign-in-alt"></i></i>Log in
       <% end %>
-      
+
   <% end %>
         </ul>
       </div>
-    </span>
     </div>
   </nav>
 </header>
 
 <%= yield %>
+
+
+
+</body>
 
 <footer>
   <div class="container mt-5">
@@ -80,7 +83,5 @@
     </div>
   </div>
 </footer>
-
-</body>
 
 </html>
